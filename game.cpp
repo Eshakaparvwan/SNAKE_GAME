@@ -4,7 +4,7 @@ using namespace std;
 int direction;
 int game_state=BEFORE_START;
 int score;
-int lives=5;
+int lives;
 void end_game(){
     game_state=ENDED;
     
@@ -29,15 +29,23 @@ void paint_status(){
     }
     if(game_state==BEFORE_START)
     {
-             move(10,10);
+             move(11,11);
              addstr("Press any key to enter");
         
     }
     else if(game_state==AFTER_START)
     {}
+    // else if(game_state==SNAKE_RESET)
+    // {
+    //                  move(11,11);
+
+    //       addstr("You just lost a life! Press space to continue..");
+
+    // }
+   
     else
     {
-                move(10,10);
+                move(11,11);
         addstr("PRESS SPACE TO RESTART / q TO QUIT");
         
     }
@@ -89,10 +97,13 @@ bool game_logic(){
        }
        else
        {
+        //    game_state=SNAKE_RESET;
+         
            reset_snake_loc();
        }
     }
      }
+     
      else
     {
         paint_snake();

@@ -14,6 +14,7 @@ const int QUIT='q';
 const int BEFORE_START=0;
 const int AFTER_START=1;
 const int ENDED=2;
+const int SNAKE_RESET=3;
 const int FOOD_COUNT=5;
 
 #endif
